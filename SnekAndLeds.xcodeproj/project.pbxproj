@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F110CC4821179C3500AC35A6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F110CC4721179C3500AC35A6 /* main.m */; };
+		F110CC542117AA5000AC35A6 /* InputHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = F110CC532117AA5000AC35A6 /* InputHandler.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,8 @@
 /* Begin PBXFileReference section */
 		F110CC4421179C3500AC35A6 /* SnekAndLeds */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SnekAndLeds; sourceTree = BUILT_PRODUCTS_DIR; };
 		F110CC4721179C3500AC35A6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F110CC522117AA5000AC35A6 /* InputHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InputHandler.h; sourceTree = "<group>"; };
+		F110CC532117AA5000AC35A6 /* InputHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InputHandler.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,8 +61,18 @@
 			isa = PBXGroup;
 			children = (
 				F110CC4721179C3500AC35A6 /* main.m */,
+				F110CC4E2117AA1300AC35A6 /* Classes */,
 			);
 			path = SnekAndLeds;
+			sourceTree = "<group>";
+		};
+		F110CC4E2117AA1300AC35A6 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				F110CC522117AA5000AC35A6 /* InputHandler.h */,
+				F110CC532117AA5000AC35A6 /* InputHandler.m */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -119,6 +132,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F110CC4821179C3500AC35A6 /* main.m in Sources */,
+				F110CC542117AA5000AC35A6 /* InputHandler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

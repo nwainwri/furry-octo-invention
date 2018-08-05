@@ -7,11 +7,42 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "InputHandler.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        // insert code here...
-        NSLog(@"Hello, World!");
+        //varible declaration
+        BOOL gameOn = YES;
+        
+        //declare objects
+        InputHandler *inputHandler = [[InputHandler alloc] init];
+
+
+        // welcome user; instructions
+        NSLog(@"---------------------------------------");
+        NSLog(@"|   Welcome to Sneks and Leds:        |");
+        NSLog(@"| First Player to 100, wins the game  |");
+        NSLog(@"| Find the bottom of a Led, up you go |");
+        NSLog(@"|  Land on a Snek head, down you go   |");
+        NSLog(@"|   'r' is to roll ; 'q' is to quit   |");
+        NSLog(@"---------------------------------------");
+
+        while (gameOn == YES){
+            
+            NSString *userAnswerString = [inputHandler userInputForPrompt:@"==>  "];
+            if ([userAnswerString isEqualToString:@"r"]) {
+                gameOn = YES;
+            }
+            if ([userAnswerString isEqualToString:@"q"]) {
+                NSLog(@"Hope You Had Fun!");
+                gameOn = NO;
+            }
+
+
+        } // GAME LOOP
+
     }
     return 0;
+
+
 }
