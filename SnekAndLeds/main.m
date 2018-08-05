@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "InputHandler.h"
+#import "Player.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
@@ -16,7 +17,7 @@ int main(int argc, const char * argv[]) {
         
         //declare objects
         InputHandler *inputHandler = [[InputHandler alloc] init];
-
+        Player *playerOne = [[Player alloc] init];
 
         // welcome user; instructions
         NSLog(@"---------------------------------------");
@@ -32,6 +33,8 @@ int main(int argc, const char * argv[]) {
             NSString *userAnswerString = [inputHandler userInputForPrompt:@"==>  "];
             if ([userAnswerString isEqualToString:@"r"]) {
                 gameOn = YES;
+                NSLog(@"Roll: %d", [playerOne rollDice]);
+                
             }
             if ([userAnswerString isEqualToString:@"q"]) {
                 NSLog(@"Hope You Had Fun!");
