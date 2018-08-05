@@ -13,6 +13,6 @@
 @property NSInteger currentSquare;
 @property int currentRoll;
 
--(int)rollDice;
+-(void)rollDice;
 
 @end

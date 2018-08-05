@@ -33,7 +33,8 @@ int main(int argc, const char * argv[]) {
             NSString *userAnswerString = [inputHandler userInputForPrompt:@"==>  "];
             if ([userAnswerString isEqualToString:@"r"]) {
                 gameOn = YES;
-                NSLog(@"Roll: %d", [playerOne rollDice]);
+                [playerOne rollDice];
+                NSLog(@"     Current:[ %ld ] Roll:[ %d ]", (long)playerOne.currentSquare, playerOne.currentRoll);
                 
             }
             if ([userAnswerString isEqualToString:@"q"]) {

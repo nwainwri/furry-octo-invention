@@ -14,16 +14,26 @@
 {
     self = [super init];
     if (self) {
-        _currentRoll = 0;
+//        NSDictionary *sneksLeds = {
+//                //ladders
+//            
+//        };
+//        _currentRoll = 0;
+        _currentSquare = 0;
     }
     return self;
 }
 
 
--(int)rollDice{
+-(void)rollDice{
     //never seems to pop out a '6' roll
-    self.currentRoll = self.currentRoll + arc4random_uniform(6)+0;
-    return self.currentRoll;
+    self.currentRoll = arc4random_uniform(6)+1;
+    self.currentSquare = self.currentSquare + self.currentRoll;
+//    return self.currentRoll;
 }
+
+
+
+//. NSNumber *yourNumber = [NSNumber numberWithInt:your_int_variable];  https://forums.macrumors.com/threads/converting-an-int-into-an-nsnumber-then-saving-to-an-array.547952/
 
 @end
