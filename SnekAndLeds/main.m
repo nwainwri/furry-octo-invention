@@ -34,7 +34,7 @@ int main(int argc, const char * argv[]) {
             if ([userAnswerString isEqualToString:@"r"]) {
                 gameOn = YES;
                 [playerOne rollDice];
-                NSLog(@"     Current:[ %ld ] Roll:[ %d ]", (long)playerOne.currentSquare, playerOne.currentRoll);
+                NSLog(@"|    Current:[ %ld ] Roll:[ %d ]", (long)playerOne.currentSquare, playerOne.currentRoll);
                 
             }
             if ([userAnswerString isEqualToString:@"q"]) {
