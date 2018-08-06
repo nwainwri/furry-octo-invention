@@ -34,8 +34,14 @@
     // get total number of players
     int totalPlayers = 0;
     totalPlayers = [self.players count];
+    self.currentIndex = self.currentIndex + 1;
+    int nextPlayer = 0;
     
+//    To do this I would like you to use the modulus operator. currentIndex should just keep
+//    incrementing by 1 for each roll. The method currentPlayer will compute the array index
+//    using 3 things. The modulus operator, the currentIndex and the count of the players array.
     
+    nextPlayer = self.currentIndex % totalPlayers;
     
     
     //increments the currentIndex for which player

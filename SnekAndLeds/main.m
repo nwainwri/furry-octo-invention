@@ -36,7 +36,11 @@ int main(int argc, const char * argv[]) {
         
         int numberOfPlayers = [userPlayers intValue] - 1;
         [playerManager createPlayers:numberOfPlayers];
-        [playerManager managerRoll];
+        
+        while (2 > 1) {
+            [playerManager managerRoll];
+        }
+        
         
         
 //        // GAME LOOP
