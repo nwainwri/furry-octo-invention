@@ -31,9 +31,10 @@
 }
 
 - (Player *)managerRoll{
+    
     // get total number of players
     NSUInteger totalPlayers = [self.players count];
-    self.currentIndex = self.currentIndex + 1;
+    
     
 //    To do this I would like you to use the modulus operator. currentIndex should just keep
 //    incrementing by 1 for each roll. The method currentPlayer will compute the array index
@@ -45,7 +46,7 @@
     // will return a Player* computed from currentIndex
     
     // use modulus operator?
-    
+    self.currentIndex = self.currentIndex + 1;
     return self.players[nextPlayer];
 }
 - (void)managerOutput{

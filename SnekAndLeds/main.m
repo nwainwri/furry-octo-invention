@@ -40,7 +40,7 @@ int main(int argc, const char * argv[]) {
                 gameOn = NO;
                 break;
             }
-            NSString *userAnswerString = [inputHandler userInputForPrompt:@"==>  "];
+            NSString *userAnswerString = [inputHandler userInputForPrompt:@"|   [r] [q] ==>  "];
             
             if ([userAnswerString isEqualToString:@"r"]) {
                 [currentPlayer rollDice];
