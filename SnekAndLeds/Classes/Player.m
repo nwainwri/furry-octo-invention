@@ -10,7 +10,7 @@
 
 @implementation Player
 
-- (instancetype)init
+- (instancetype)initWithName:(NSString *)name
 {
     self = [super init];
     if (self) {
@@ -33,6 +33,7 @@
                        };
         _currentRoll = 0;
         _currentSquare = 0;
+        _name = name;
         _gameOver = NO;
     }
     return self;

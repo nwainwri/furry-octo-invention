@@ -9,16 +9,20 @@
 #import <Foundation/Foundation.h>
 #import "InputHandler.h"
 #import "Player.h"
+#import "PlayerManager.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         //varible declaration
         BOOL gameOn = YES;
-        
         //declare objects
         InputHandler *inputHandler = [[InputHandler alloc] init];
-        Player *playerOne = [[Player alloc] init];
-
+        PlayerManager *playerManager = [[PlayerManager alloc] init];
+        
+        [playerManager createPlayers:5];
+        
+        
+        // Player *playerOne = [[Player alloc] init];
         // welcome user; instructions
         NSLog(@"---------------------------------------");
         NSLog(@"|   Welcome to Sneks and Leds:        |");
@@ -27,26 +31,20 @@ int main(int argc, const char * argv[]) {
         NSLog(@"|  Land on a Snek head, down you go   |");
         NSLog(@"|   'r' is to roll ; 'q' is to quit   |");
         NSLog(@"---------------------------------------");
-
-        while (playerOne.gameOver == NO){
-            
-            NSString *userAnswerString = [inputHandler userInputForPrompt:@"==>  "];
-            if ([userAnswerString isEqualToString:@"r"]) {
-                gameOn = YES;
-                [playerOne rollDice];
-                NSLog(@"|    Current:[ %ld ] Roll:[ %d ]", (long)playerOne.currentSquare, playerOne.currentRoll);
-                
-            }
-            if ([userAnswerString isEqualToString:@"q"]) {
-                NSLog(@"Hope You Had Fun!");
-                gameOn = NO;
-            }
-
-
-        } // GAME LOOP
-
+//        // GAME LOOP
+//        while (playerOne.gameOver == NO){
+//            NSString *userAnswerString = [inputHandler userInputForPrompt:@"==>  "];
+//            if ([userAnswerString isEqualToString:@"r"]) {
+//                gameOn = YES;
+//                [playerOne rollDice];
+//                NSLog(@"|    Current:[ %ld ] Roll:[ %d ]", (long)playerOne.currentSquare, playerOne.currentRoll);
+//                
+//            }
+//            if ([userAnswerString isEqualToString:@"q"]) {
+//                NSLog(@"Hope You Had Fun!");
+//                gameOn = NO;
+//            }
+//        } // GAME LOOP
     }
     return 0;
-
-
 }
