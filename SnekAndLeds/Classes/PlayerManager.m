@@ -31,6 +31,13 @@
 }
 
 - (Player *)managerRoll{
+    // get total number of players
+    int totalPlayers = 0;
+    totalPlayers = [self.players count];
+    
+    
+    
+    
     //increments the currentIndex for which player
     // will return a Player* computed from currentIndex
     

@@ -19,7 +19,8 @@ int main(int argc, const char * argv[]) {
         InputHandler *inputHandler = [[InputHandler alloc] init];
         PlayerManager *playerManager = [[PlayerManager alloc] init];
         
-        [playerManager createPlayers:5];
+        
+        
         
         
         // Player *playerOne = [[Player alloc] init];
@@ -31,6 +32,13 @@ int main(int argc, const char * argv[]) {
         NSLog(@"|  Land on a Snek head, down you go   |");
         NSLog(@"|   'r' is to roll ; 'q' is to quit   |");
         NSLog(@"---------------------------------------");
+        NSString *userPlayers = [inputHandler userInputForPrompt:@"Number of Players?   "];
+        
+        int numberOfPlayers = [userPlayers intValue] - 1;
+        [playerManager createPlayers:numberOfPlayers];
+        [playerManager managerRoll];
+        
+        
 //        // GAME LOOP
 //        while (playerOne.gameOver == NO){
 //            NSString *userAnswerString = [inputHandler userInputForPrompt:@"==>  "];

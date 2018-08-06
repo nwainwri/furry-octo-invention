@@ -18,7 +18,6 @@
 
 -(instancetype)initWithName:(NSString*)name;
 
-
 -(void)rollDice;
 
 @end
