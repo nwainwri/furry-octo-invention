@@ -43,13 +43,12 @@
     
     nextPlayer = self.currentIndex % totalPlayers;
     
-    
     //increments the currentIndex for which player
     // will return a Player* computed from currentIndex
     
     // use modulus operator?
     
-    return 0;
+    return self.players[nextPlayer];
 }
 - (void)managerOutput{
     

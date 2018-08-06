@@ -36,15 +36,13 @@ int main(int argc, const char * argv[]) {
         
         int numberOfPlayers = [userPlayers intValue] - 1;
         [playerManager createPlayers:numberOfPlayers];
-        
-        while (2 > 1) {
-            [playerManager managerRoll];
-        }
+        [playerManager managerRoll];
         
         
-        
-//        // GAME LOOP
-//        while (playerOne.gameOver == NO){
+        while (gameOn == NO){
+            
+            
+            // how to refactor this code INTO PLAYER.M....
 //            NSString *userAnswerString = [inputHandler userInputForPrompt:@"==>  "];
 //            if ([userAnswerString isEqualToString:@"r"]) {
 //                gameOn = YES;
@@ -52,11 +50,14 @@ int main(int argc, const char * argv[]) {
 //                NSLog(@"|    Current:[ %ld ] Roll:[ %d ]", (long)playerOne.currentSquare, playerOne.currentRoll);
 //                
 //            }
+            //refactor ABOVE code
+            
+            
 //            if ([userAnswerString isEqualToString:@"q"]) {
 //                NSLog(@"Hope You Had Fun!");
 //                gameOn = NO;
 //            }
-//        } // GAME LOOP
+        } // GAME LOOP
     }
     return 0;
 }
