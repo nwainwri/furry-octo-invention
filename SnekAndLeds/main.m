@@ -28,7 +28,7 @@ int main(int argc, const char * argv[]) {
         NSLog(@"|   'r' is to roll ; 'q' is to quit   |");
         NSLog(@"---------------------------------------");
 
-        while (gameOn == YES){
+        while (playerOne.gameOver == NO){
             
             NSString *userAnswerString = [inputHandler userInputForPrompt:@"==>  "];
             if ([userAnswerString isEqualToString:@"r"]) {

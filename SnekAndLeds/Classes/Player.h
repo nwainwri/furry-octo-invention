@@ -15,6 +15,7 @@
 
 @property NSDictionary *gameLogic;
 
+@property BOOL gameOver;
 
 -(void)rollDice;
 
