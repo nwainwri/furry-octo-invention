@@ -50,7 +50,7 @@
     }
     if ([self.gameLogic objectForKey:square]) {
         NSNumber *adjustedSquare = [self.gameLogic objectForKey:square];
-        NSLog(@"|    YOU FOUND A SNEK OR LEDD %@", adjustedSquare);
+        NSLog(@"|    YOU FOUND A SNEK OR LEDD %@", square);
         self.currentSquare = [adjustedSquare integerValue];
     }
 }
