@@ -13,6 +13,9 @@
 @property NSInteger currentSquare;
 @property int currentRoll;
 
+@property NSDictionary *gameLogic;
+
+
 -(void)rollDice;
 
 @end

@@ -16,22 +16,21 @@
     if (self) {
         // ledds; lowKey to highValue
         // sneks; highKey to lowValue
-        NSDictionary *sneksLeddz = @{
-                                     //@"footLadder": @"topLadder",
-                                     @4:@14,
-                                     @9:@31,
-                                     @20:@38,
-                                     @28:@84,
-                                     @41:@89,
-                                     @51:@67,
-                                     @63:@81,
-                                     //@"snakeHead": @"snakeTail",
-                                     @17:@7,
-                                     @64:@60,
-                                     @89:@26,
-                                     @95:@75,
-                                     @99:@78
-                                     };
+        _gameLogic = @{//@"footLadder": @"topLadder",
+                       @4:@14,
+                       @9:@31,
+                       @20:@38,
+                       @28:@84,
+                       @41:@89,
+                       @51:@67,
+                       @63:@81,
+                       //@"snakeHead": @"snakeTail",
+                       @17:@7,
+                       @64:@60,
+                       @89:@26,
+                       @95:@75,
+                       @99:@78
+                       };
         _currentRoll = 0;
         _currentSquare = 0;
     }
@@ -43,7 +42,13 @@
     //never seems to pop out a '6' roll
     self.currentRoll = arc4random_uniform(6)+1; // INTEGER MUST BE WRAPPED IN NSNUMBER
     self.currentSquare = self.currentSquare + self.currentRoll;
+    NSNumber *square = [NSNumber numberWithInt:self.currentSquare];
     
+    if ([self.gameLogic objectForKey:square]) {
+        NSNumber *adjustedSquare = [self.gameLogic objectForKey:square];
+        NSLog(@"YOU FOUND A SNEK OR LEDD %@", adjustedSquare);
+        self.currentSquare = [adjustedSquare integerValue];
+    }
 }
 
 
