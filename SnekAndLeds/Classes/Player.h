@@ -14,7 +14,6 @@
 @property NSInteger currentSquare;
 @property int currentRoll;
 @property NSDictionary *gameLogic;
-@property BOOL gameOver;
 @property NSString *name;
 
 -(instancetype)initWithName:(NSString*)name;

@@ -34,7 +34,6 @@
         _currentRoll = 0;
         _currentSquare = 0;
         _name = name;
-        _gameOver = NO;
     }
     return self;
 }
@@ -44,20 +43,7 @@
     self.currentRoll = arc4random_uniform(6)+1; // INTEGER MUST BE WRAPPED IN NSNUMBER
     self.currentSquare = self.currentSquare + self.currentRoll;
     NSNumber *square = [NSNumber numberWithInt:self.currentSquare];
-    InputHandler *currentInput = [[InputHandler alloc] init];
     
-    NSString *userAnswerString = [currentInput userInputForPrompt:@"==>  "];
-    if ([userAnswerString isEqualToString:@"r"]) {
-        //gameOn = YES;
-        //[playerOne rollDice];
-        NSLog(@"|    Current:[ %ld ] Roll:[ %d ]", self.currentSquare, self.currentRoll);
-        
-    }
-    
-    if (self.currentSquare >= 100) {
-        NSLog(@"|    YOU WON SNEKS AND LEDDS!");
-        _gameOver = YES;
-    }
     if ([self.gameLogic objectForKey:square]) {
         NSNumber *adjustedSquare = [self.gameLogic objectForKey:square];
         NSLog(@"|    YOU FOUND A SNEK OR LEDD %@", square);

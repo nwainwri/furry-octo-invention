@@ -18,12 +18,6 @@ int main(int argc, const char * argv[]) {
         //declare objects
         InputHandler *inputHandler = [[InputHandler alloc] init];
         PlayerManager *playerManager = [[PlayerManager alloc] init];
-        
-        
-        
-        
-        
-        // Player *playerOne = [[Player alloc] init];
         // welcome user; instructions
         NSLog(@"---------------------------------------");
         NSLog(@"|   Welcome to Sneks and Leds:        |");
@@ -32,31 +26,31 @@ int main(int argc, const char * argv[]) {
         NSLog(@"|  Land on a Snek head, down you go   |");
         NSLog(@"|   'r' is to roll ; 'q' is to quit   |");
         NSLog(@"---------------------------------------");
-        NSString *userPlayers = [inputHandler userInputForPrompt:@"Number of Players?   "];
         
+        NSString *userPlayers = [inputHandler userInputForPrompt:@"Number of Players?   "];
         int numberOfPlayers = [userPlayers intValue] - 1;
         [playerManager createPlayers:numberOfPlayers];
-        [playerManager managerRoll];
         
-        
-        while (gameOn == NO){
-            
-            
+        while (gameOn == YES){
+            Player *currentPlayer = [playerManager managerRoll];
+            NSLog(@"|   Player: %@", currentPlayer.name);
             // how to refactor this code INTO PLAYER.M....
-//            NSString *userAnswerString = [inputHandler userInputForPrompt:@"==>  "];
-//            if ([userAnswerString isEqualToString:@"r"]) {
-//                gameOn = YES;
-//                [playerOne rollDice];
-//                NSLog(@"|    Current:[ %ld ] Roll:[ %d ]", (long)playerOne.currentSquare, playerOne.currentRoll);
-//                
-//            }
-            //refactor ABOVE code
+            if (currentPlayer.currentSquare >= 100){
+                NSLog(@"|    YOU WON SNEKS AND LEDDS!");
+                gameOn = NO;
+                break;
+            }
+            NSString *userAnswerString = [inputHandler userInputForPrompt:@"==>  "];
             
-            
-//            if ([userAnswerString isEqualToString:@"q"]) {
-//                NSLog(@"Hope You Had Fun!");
-//                gameOn = NO;
-//            }
+            if ([userAnswerString isEqualToString:@"r"]) {
+                [currentPlayer rollDice];
+                NSLog(@"|    Current:[ %ld ] Roll:[ %d ]", (long)currentPlayer.currentSquare, currentPlayer.currentRoll);
+            }
+//            refactor ABOVE code
+            if ([userAnswerString isEqualToString:@"q"]) {
+                NSLog(@"Hope You Had Fun!");
+                gameOn = NO;
+            }
         } // GAME LOOP
     }
     return 0;
