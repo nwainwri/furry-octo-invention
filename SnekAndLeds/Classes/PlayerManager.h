@@ -12,9 +12,13 @@
 @interface PlayerManager : NSObject
 
 @property NSMutableArray *players;
-@property NSInteger currentIndex;
+@property NSInteger currentIndex; //current player index
 
 - (void)createPlayers:(NSInteger)setPlayers;
+
+- (Player *)managerRoll;
+
+- (void)managerOutput;
 
 
 

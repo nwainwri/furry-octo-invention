@@ -21,17 +21,25 @@
     return self;
 }
 
-
 - (void)createPlayers:(NSInteger)setPlayers{
     for (int i =0; i <= setPlayers; i++) {
-        
         Player *player = [[Player alloc]initWithName:[NSString stringWithFormat:@"Player %d", i ]];
         [self.players addObject:player];
-        
 //        NSString *foo = [NSClassFromString(@"player")];
-//        
 //        Player *(foo) = [[Player alloc] init];
     }
+}
+
+- (Player *)managerRoll{
+    //increments the currentIndex for which player
+    // will return a Player* computed from currentIndex
+    
+    // use modulus operator?
+    
+    return 0;
+}
+- (void)managerOutput{
+    
 }
 
 @end
