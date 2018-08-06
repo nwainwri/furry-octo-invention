@@ -12,8 +12,11 @@
 @interface PlayerManager : NSObject
 
 @property NSMutableArray *players;
+@property NSInteger currentIndex;
 
-- (void) createPlayers:(int)setPlayers;
+- (void)createPlayers:(NSInteger)setPlayers;
+
+
 
 
 @end

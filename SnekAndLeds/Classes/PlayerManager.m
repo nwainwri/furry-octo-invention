@@ -15,13 +15,14 @@
 {
     self = [super init];
     if (self) {
-        // _players = 
+        _players = [[NSMutableArray alloc] init];
+        _currentIndex = 0;
     }
     return self;
 }
 
 
-- (void) createPlayers:(NSInteger)setPlayers{
+- (void)createPlayers:(NSInteger)setPlayers{
     for (int i =0; i <= setPlayers; i++) {
         
         Player *player = [[Player alloc]initWithName:[NSString stringWithFormat:@"Player %d", i ]];
